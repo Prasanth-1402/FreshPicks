@@ -1,0 +1,137 @@
+[debug] [2025-12-26T17:02:45.701Z] ----------------------------------------------------------------------
+[debug] [2025-12-26T17:02:45.702Z] Command:       /opt/homebrew/Cellar/node/25.2.1/bin/node /opt/homebrew/bin/firebase emulators:start
+[debug] [2025-12-26T17:02:45.702Z] CLI Version:   15.1.0
+[debug] [2025-12-26T17:02:45.702Z] Platform:      darwin
+[debug] [2025-12-26T17:02:45.702Z] Node Version:  v25.2.1
+[debug] [2025-12-26T17:02:45.702Z] Time:          Fri Dec 26 2025 17:02:45 GMT+0000 (Greenwich Mean Time)
+[debug] [2025-12-26T17:02:45.702Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-12-26T17:02:46.190Z] Object "/functions" in "firebase.json" is missing required property: {"missingProperty":"source"}
+[debug] [2025-12-26T17:02:46.191Z] Object "/functions" in "firebase.json" is missing required property: {"missingProperty":"remoteSource"}
+[debug] [2025-12-26T17:02:46.191Z] Field "/functions" in "firebase.json" is possibly invalid: must be array
+[debug] [2025-12-26T17:02:46.191Z] Field "/functions" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-12-26T17:02:46.192Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] Failed to authenticate, have you run firebase login?
+[warn] ⚠  emulators: You are not currently authenticated so some features may not work correctly. Please run firebase login to authenticate the CLI. 
+[info] i  emulators: Starting emulators: functions, hosting, extensions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting, extensions"}}
+[debug] [2025-12-26T17:02:46.200Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.200Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.200Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-26T17:02:46.201Z] Unable to check that https://cloudresourcemanager.googleapis.com is enabled on freshpicksonline. Calls to it will fail if it is not enabled
+[debug] [2025-12-26T17:02:46.201Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.201Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.201Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[error] ⬢  extensions: Unable to look up project number for freshpicksonline.
+ If this is a real project, ensure that you are logged in and have access to it.
+ If this is a fake project, please use a project ID starting with 'demo-' to skip production calls.
+ Continuing with a fake project number - secrets and other features that require production access may behave unexpectedly. {"metadata":{"emulator":{"name":"extensions"},"message":"Unable to look up project number for freshpicksonline.\n If this is a real project, ensure that you are logged in and have access to it.\n If this is a fake project, please use a project ID starting with 'demo-' to skip production calls.\n Continuing with a fake project number - secrets and other features that require production access may behave unexpectedly."}}
+[debug] [2025-12-26T17:02:46.411Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] ⚠  hosting: Hosting Emulator unable to start on port 5000, starting on 5002 instead. {"metadata":{"emulator":{"name":"hosting"},"message":"Hosting Emulator unable to start on port 5000, starting on 5002 instead."}}
+[debug] [2025-12-26T17:02:46.411Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-26T17:02:46.411Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5002}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-12-26T17:02:46.412Z] Emulator locator file path: /var/folders/wx/_8bt4xr90k3bv31vhtdd_s640000gn/T/hub-freshpicksonline.json
+[debug] [2025-12-26T17:02:46.412Z] [hub] writing locator at /var/folders/wx/_8bt4xr90k3bv31vhtdd_s640000gn/T/hub-freshpicksonline.json
+[debug] [2025-12-26T17:02:46.414Z] [Extensions] Started Extensions emulator, this is a noop.
+[debug] [2025-12-26T17:02:46.549Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-26T17:02:46.549Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-26T17:02:46.549Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-12-26T17:02:46.549Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5002}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2025-12-26T17:02:46.550Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.550Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.550Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-26T17:02:46.550Z] Failed to get Admin SDK config for freshpicksonline, falling back to cache Failed to get Admin SDK for Firebase project freshpicksonline. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project freshpicksonline. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"exit":1,"message":"Failed to authenticate, have you run \u001b[1mfirebase login\u001b[22m?","original":{},"status":500},"status":500}
+[warn] ⚠  functions: Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect. {"metadata":{"emulator":{"name":"functions"},"message":"Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect."}}
+[debug] [2025-12-26T17:02:46.552Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.552Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.552Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-26T17:02:46.552Z] Failed to list hosting sites
+[debug] Failed to authenticate, have you run firebase login?
+[debug] [2025-12-26T17:02:46.552Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.552Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.552Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-26T17:02:46.552Z] fetchWebSetup error: FirebaseError: Failed to authenticate, have you run firebase login?
+[warn] ⚠  hosting: Could not fetch web app configuration and there is no cached configuration on this machine. Check your internet connection and make sure you are authenticated. To continue, you must call firebase.initializeApp({...}) in your code before using Firebase. 
+[debug] [2025-12-26T17:02:46.554Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.554Z] No OAuth tokens found
+[debug] [2025-12-26T17:02:46.554Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-26T17:02:46.554Z] Failed to authenticate, have you run firebase login? (original: Could not load the default credentials. Browse to https://cloud.google.com/docs/authentication/getting-started for more information.)
+[debug] [2025-12-26T17:02:46.554Z] Specified "public" directory "build" does not exist; Deploy to Hosting site "freshpicksonline" may fail or be empty.
+[info] i  hosting[freshpicksonline]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting[freshpicksonline]: Local server: http://127.0.0.1:5002 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5002\u001b[22m\u001b[24m"}}
+[debug] [2025-12-26T17:02:46.583Z] [Extensions] Connecting Extensions emulator, this is a noop.
+[info] i  functions: Watching "/Users/prasanths/Developer/Github/FreshPicks/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/prasanths/Developer/Github/FreshPicks/functions\" for Cloud Functions..."}}
+[debug] [2025-12-26T17:02:46.585Z] Validating nodejs source
+[debug] [2025-12-26T17:02:46.932Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.0.2",
+    "firebase-functions": "^7.0.2",
+    "stripe": "^17.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "firebase-functions-test": "^3.3.0"
+  },
+  "private": true
+}
+[debug] [2025-12-26T17:02:46.932Z] Building nodejs source
+[debug] [2025-12-26T17:02:46.932Z] Failed to find version of module node: reached end of search path /Users/prasanths/Developer/Github/FreshPicks/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "25". Using node@25 from host. 
+[debug] [2025-12-26T17:02:46.933Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-12-26T17:02:46.935Z] Found firebase-functions binary at '/Users/prasanths/Developer/Github/FreshPicks/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8141
+
+[error] Error: Neither apiKey nor config.authenticator provided
+    at Stripe._setAuthenticator (/Users/prasanths/Developer/Github/FreshPicks/functions/node_modules/stripe/cjs/stripe.core.js:166:23)
+    at new Stripe (/Users/prasanths/Developer/Github/FreshPicks/functions/node_modules/stripe/cjs/stripe.core.js:102:14)
+    at Stripe (/Users/prasanths/Developer/Github/FreshPicks/functions/node_modules/stripe/cjs/stripe.core.js:58:20)
+    at Object.<anonymous> (/Users/prasanths/Developer/Github/FreshPicks/functions/routes/payments/index.js:3:33)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Object..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+
+[debug] [2025-12-26T17:02:47.215Z] Got response code 400; body Failed to generate manifest from function source: Neither apiKey nor config.authenticator provided
+[error] ⬢  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
+[debug] [2025-12-26T17:02:51.227Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────┬────────────────┬──────────────────────────────────┐
+│ Emulator   │ Host:Port      │ View in Emulator UI              │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Functions  │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions  │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Hosting    │ 127.0.0.1:5002 │ n/a                              │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Extensions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/extensions │
+└────────────┴────────────────┴──────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+┌─────────────────────────┬───────────────┬─────────────────────┐
+│ Extension Instance Name │ Extension Ref │ View in Emulator UI │
+└─────────────────────────┴───────────────┴─────────────────────┘
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
