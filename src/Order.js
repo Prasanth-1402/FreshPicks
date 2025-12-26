@@ -2,10 +2,8 @@ import React from 'react';
 import './Order.css';
 import CheckoutProduct from './CheckoutProduct';
 import moment from 'moment';
-// import {useStateValue} from './StateProvider';
-import CurrencyFormat from 'react-currency-format';
+import {NumericFormat} from 'react-number-format';
 function Order({order}) {
-  //   const [{cart, user}, dispatch] = useStateValue();
   return (
     <div className="order">
       <h2>Order </h2>
@@ -24,13 +22,13 @@ function Order({order}) {
           hideButton
         />
       ))}
-      <CurrencyFormat
+      <NumericFormat
         renderText={(value) => <h3>Order Total - {value} </h3>}
         decimalScale={2}
         value={order.data.amount / 100}
         displayType={'text'}
-        thousandSeperator={true}
-        prefix={'₹'}
+        thousandSeparator={true}
+        prefix={'£'}
       />
     </div>
   );

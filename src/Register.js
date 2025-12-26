@@ -1,20 +1,19 @@
 import React, {useState} from 'react';
-
 import './Register.css';
-import {useHistory, Link} from 'react-router-dom';
-
-import registerVideo from '/Users/Prasanth_Shanmugam/Downloads/Major_Project/ourfreshpicks/src/images/regBg.jpg';
+import {useNavigate, Link} from 'react-router-dom';
+import registerVideo from './images/regBg.jpg';
 import {auth} from './firebase';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
 function Register() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
   const register = (e) => {
     e.preventDefault();
-    auth.createUserWithEmailAndPassword(email, password).then((auth) => {
-      if (auth) {
-        history.push('/');
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      if (userCredential) {
+        navigate('/');
       }
     });
   };
@@ -67,9 +66,6 @@ function Register() {
           <button className="register__btn">cancel</button>
         </Link>
       </div>
-      {/* <video className="register__vid" autoPlay muted loop>
-        <source src={registerVideo} />
-      </video> */}
       <img className="register__img" alt="" src={registerVideo} />
     </div>
   );

@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 import './Login.css';
-import {Link, useHistory} from 'react-router-dom';
-import loginVideo from '/Users/Prasanth_Shanmugam/Downloads/Major_Project/ourfreshpicks/src/images/loginBg.jpg';
+import {Link, useNavigate} from 'react-router-dom';
+import loginVideo from './images/loginBg.jpg';
 import {auth} from './firebase';
+import {signInWithEmailAndPassword} from 'firebase/auth';
 function Login() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
   const login = (e) => {
     e.preventDefault();
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
         window.alert('Login Success');
-        history.push('/');
+        navigate('/');
       })
       .catch((err) => {
         alert(err.message);
@@ -23,7 +23,7 @@ function Login() {
   const cancel = (e) => {
     e.preventDefault();
     window.alert('Login cancelled');
-    history.push('/');
+    navigate('/');
   };
   return (
     <div className="login">
@@ -67,9 +67,6 @@ function Login() {
           </div>
         </form>
       </div>
-      {/* <video autoPlay muted className="login__vid">
-        <source src={loginVideo} />
-      </video> */}
       <img className="login__vid" src={loginVideo} alt="backgroundImage" />
     </div>
   );

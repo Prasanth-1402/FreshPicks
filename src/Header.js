@@ -1,15 +1,17 @@
 import React from 'react';
 import './Header.css';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import SearchIcon from '@material-ui/icons/Search';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import SearchIcon from '@mui/icons-material/Search';
 import {Link} from 'react-router-dom';
 import {useStateValue} from './StateProvider';
 import {GetUserName} from './Checkout';
 import {auth} from './firebase';
+import {signOut} from 'firebase/auth';
+import {getCartItemCount} from './Reducer';
 function Header() {
   const [{cart, user}] = useStateValue();
   const logHandler = () => {
-    if (user) auth.signOut();
+    if (user) signOut(auth);
   };
   const userName = <GetUserName />;
   return (
@@ -55,7 +57,7 @@ function Header() {
           <div className="header__optionCart glow">
             <ShoppingCartIcon />
             <span className="header__optionLineTwo header__cartCount">
-              {cart?.length}
+              {getCartItemCount(cart)}
             </span>
           </div>
         </Link>

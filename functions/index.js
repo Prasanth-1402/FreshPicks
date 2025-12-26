@@ -1,32 +1,32 @@
 const functions = require('firebase-functions');
+const admin = require('firebase-admin');
 const express = require('express');
 const cors = require('cors');
-const stripe = require('stripe')(
-  'sk_test_51I6yWmGAwh0uRQFn337V0Rn7d4JimqOsBZoljUp2RnyQruGCI4hI8ejkZfmaghnH7gStF7Ua1hmnKvbIzdsrPo2Y00JhjP1alH'
-);
 
-// API
+// Initialize Firebase Admin
+admin.initializeApp();
 
-// App congfiguration
+// Import routes
+const paymentsRoutes = require('./routes/payments');
+const ordersRoutes = require('./routes/orders');
+const userRoutes = require('./routes/user');
+
+// App configuration
 const app = express();
 
-// middlewares
+app.use(cors({ origin: "http://localhost:3000" })); 
+
+// Middlewares
 app.use(cors({origin: true}));
 app.use(express.json());
 
-//API Routes
-app.get('/', (request, response) => response.send('Hello World!'));
+// API Routes
+app.get('/', (req, res) => res.send('FreshPicks API is running!'));
 
-app.post('/payments/create', async (request, response) => {
-  const total = request.query.total;
-  console.log('Payment request received for ', total / 100, '!');
-  const paymentIntent = await stripe.paymentIntents.create({
-    amount: total,
-    currency: 'INR',
-  });
-  response.status(201).send({
-    clientSecret: paymentIntent.client_secret,
-  });
-});
-//listener
+// Mount route modules
+app.use('/payments', paymentsRoutes);
+app.use('/orders', ordersRoutes);
+app.use('/user', userRoutes);
+
+// Export the API
 exports.api = functions.https.onRequest(app);

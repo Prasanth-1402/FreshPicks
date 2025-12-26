@@ -8,8 +8,9 @@ import Checkout from './Checkout';
 import Login from './Login';
 import Register from './Register';
 import Payment from './Payment';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {auth} from './firebase';
+import {onAuthStateChanged} from 'firebase/auth';
 import {useStateValue} from './StateProvider';
 import {loadStripe} from '@stripe/stripe-js';
 import {Elements} from '@stripe/react-stripe-js';
@@ -18,9 +19,9 @@ const promise = loadStripe(
   'pk_test_51I6yWmGAwh0uRQFnpCMOeNDQPYIr4fgZgosVC5HbvglXi46PLMXgISnLCB1TSIBfaNFpYyDxfTxyYcIHUZNrNZaJ00K5A8IHEM'
 );
 function App() {
-  const [{cart}, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
   useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
       if (authUser) {
         dispatch({
           type: 'SET_USER',
@@ -33,34 +34,20 @@ function App() {
         });
       }
     });
-  }, []);
+    return () => unsubscribe();
+  }, [dispatch]);
   return (
     <Router>
       <div className="app">
         <Header />
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/orders">
-            <Orders />
-          </Route>
-          <Route path="/payment">
-            <Elements stripe={promise}>
-              <Payment />
-            </Elements>
-          </Route>
-          <Route path="/checkout">
-            <Checkout />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/payment" element={<Elements stripe={promise}><Payment /></Elements>} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
       </div>
     </Router>
   );

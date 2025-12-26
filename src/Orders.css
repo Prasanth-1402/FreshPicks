@@ -1,6 +1,31 @@
 .orders {
-  padding-top: 20px 80px;
+  padding: 30px 80px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  min-height: 100vh;
+  transition: all 0.3s ease;
 }
-.orders > h2 {
-  margin: 30px 0;
+
+.orders > h1 {
+  margin: 35px 0;
+  text-align: center;
+  color: #dc143c;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 4px 10px rgba(220, 20, 60, 0.2);
+  transition: all 0.3s ease;
+}
+
+.orders > h1:hover {
+  color: #228b22;
+  transform: scale(1.05);
+  text-shadow: 0 6px 15px rgba(34, 139, 34, 0.3);
+}
+
+.orders__order {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: all 0.3s ease;
 }

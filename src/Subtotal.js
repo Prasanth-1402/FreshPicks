@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import CurrencyFormat from 'react-currency-format';
+import {NumericFormat} from 'react-number-format';
 import './Subtotal.css';
 import {useStateValue} from './StateProvider';
-import {getCartTotal} from './Reducer';
-import {useHistory} from 'react-router-dom';
+import {getCartTotal, getCartItemCount} from './Reducer';
+import {useNavigate} from 'react-router-dom';
 
 function Subtotal() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [{cart}, dispatch] = useStateValue();
   const [address, setAddress] = useState(' ');
   const assignAddress = (event) => {
@@ -19,11 +19,11 @@ function Subtotal() {
   return (
     <div className="subtotal">
       <form>
-        <CurrencyFormat
+        <NumericFormat
           renderText={(value) => (
             <>
               <p>
-                <>Number of Items : {cart?.length} </>
+                <>Number of Items : {getCartItemCount(cart)} ({cart?.length} unique)</>
                 <br />
               </p>
               <>Delivery Address : </>
@@ -44,14 +44,14 @@ function Subtotal() {
           decimalScale={2}
           value={getCartTotal(cart)}
           displayType={'text'}
-          thousandSeperator={true}
-          prefix={'₹'}
+          thousandSeparator={true}
+          prefix={'£'}
         />
 
         {address.length > 15 && (
           <button
             className="subtotal__button"
-            onClick={(e) => history.push('/payment')}
+            onClick={(e) => navigate('/payment')}
           >
             Proceed to Checkout
           </button>
