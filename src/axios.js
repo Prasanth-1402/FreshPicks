@@ -1,5 +1,7 @@
 import axios from 'axios';
+
 const instance = axios.create({
-  baseURL: 'http://localhost:5001/freshpicksonline/us-central1/api',
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5001',
 });
+
 export default instance;
